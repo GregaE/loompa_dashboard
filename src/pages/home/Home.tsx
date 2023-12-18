@@ -35,8 +35,8 @@ export default function Home() {
           onSearchChange={(e: React.ChangeEvent<HTMLInputElement>) => { handleSearch(e.target.value) }}
         />
       </div>
-      <h1>Find your Oompa Loompa</h1>
-      <h2>There are more than 100k</h2>
+      <h1 data-test="home-header">Find your Oompa Loompa</h1>
+      <h2 data-test="home-subheader">There are more than 100k</h2>
       <WorkerList
         workers={filteredWorkers}
         isLoading={isLoadingWorkers}

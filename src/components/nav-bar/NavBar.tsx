@@ -10,6 +10,7 @@ export default function NavBar() {
           src={logo}
           className="nav-bar__logo"
           alt="logo"
+          data-test="nav-logo"
         />
       </Link>
       <span className='nav-bar__title'>

@@ -22,7 +22,7 @@ const WorkerList = forwardRef<HTMLDivElement, WorkerListProps>((props, ref) => {
       }
       {
         props.isLoading && (
-          Array.from({ length: 5 }).map((_, index) => (
+          Array.from({ length: 8 }).map((_, index) => (
             <Skeleton
               key={index}
               show={true}

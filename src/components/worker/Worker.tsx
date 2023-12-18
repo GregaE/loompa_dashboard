@@ -14,7 +14,11 @@ const Worker = forwardRef<HTMLDivElement, WorkerProps>((
 ) => {
   return (
     <Link to={{ pathname: `/${worker.id}` }}>
-      <div className="worker" ref={ref}>
+      <div
+        className="worker"
+        ref={ref}
+        data-test="nav-logo"
+      >
         <img
           src={worker.image}
           className="worker__image"
