@@ -1,0 +1,35 @@
+@keyframes loading {
+  0% { background-color: var(--bg-secondary); }
+  50% { background-color: var(--bg-skeleton); }
+  100% { background-color: var(--bg-secondary); }
+}
+
+.skeleton {
+  position: relative;
+  cursor: wait;
+  height: var(--height);
+  overflow: hidden;
+  width: var(--width);
+  border-radius: var(--border-radius);
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    animation: loading 1.75s linear infinite;
+  }
+}
+
+.sr-only {
+  clip: rect(0,0,0,0);
+  height: 1px;
+  border: 0;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: auto;
+}

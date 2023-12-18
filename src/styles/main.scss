@@ -1,0 +1,32 @@
+@import './reset';
+
+:root {
+  --clr-white: #ffffff;
+  --clr-black: #000000;
+  --clr-indigo: #6610f2;
+  --clr-purple: #6f42c1;
+  --clr-gray-400: #ced4da;
+  --clr-gray-500: #adb5bd;
+  --clr-red: #dc3545;
+  --text-primary: var(--clr-black);
+  --text-secondary: var(--clr-gray-500);
+  --text-active: var(--clr-indigo);
+  --bg-primary: var(--clr-white);
+  --bg-secondary: var(--clr-gray-400);
+  --bg-skeleton: var(--clr-gray-500);
+  --bg-active: var(--clr-gray-400);
+  --danger: var(--clr-red);
+  --font-primary: 'Poppins', sans-serif;
+  --border-radius: .5rem;
+}
+
+html {
+  font-family: var(--font-primary);
+  scroll-behavior: smooth;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}

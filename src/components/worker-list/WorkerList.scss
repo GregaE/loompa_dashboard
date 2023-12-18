@@ -1,0 +1,8 @@
+.worker-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(23rem, 1fr));
+  gap: 2rem;
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}

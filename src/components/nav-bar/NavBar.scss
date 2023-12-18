@@ -1,0 +1,23 @@
+.nav-bar {
+  position: sticky;
+  display: flex;
+  padding: 1.2rem 3.5rem;
+  background-color: var(--bg-secondary);
+  align-items: center;
+  gap: 1rem;
+  &__logo {
+    height: 2rem;
+  }
+  &__title {
+    align-self: center;
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+  @media screen and (max-width: 768px) {
+    padding: 1rem;
+    justify-content: center;
+    &__title {
+      display: none;
+    }
+  }
+}
