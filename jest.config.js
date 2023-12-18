@@ -1,0 +1,5 @@
+{
+  "jest": {
+    "preset": "ts-jest"
+  }
+}

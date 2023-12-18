@@ -1,4 +1,4 @@
-import Worker from '../interfaces/Worker';
+import Worker from 'interfaces/Worker';
 
 export default function filterWorkers(workers: Array<Worker>, searchTerm: string) {
   const searchTermRegex = new RegExp(searchTerm.trim().replace(/\s+/g, '.*'), 'i');
