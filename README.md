@@ -20,7 +20,9 @@ npm start
 ## Built with
 
 - [React](https://reactjs.org/)
+- [Typescript](https://www.typescriptlang.org/)
 - [Sass](https://sass-lang.com/)
+- [Redux](https://redux.js.org/)
 
 ## Author
 
