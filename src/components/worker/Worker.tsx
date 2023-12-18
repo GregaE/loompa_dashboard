@@ -2,16 +2,14 @@ import { forwardRef } from 'react';
 import { Link } from 'react-router-dom';
 import WorkerSummary from './WorkerSummary';
 import WorkerModel from 'interfaces/Worker';
-import Skeleton from 'components/skeleton/Skeleton';
 import './Worker.scss';
 
 interface WorkerProps {
   worker: WorkerModel,
-  isLoading?: boolean,
 }
 
 const Worker = forwardRef<HTMLDivElement, WorkerProps>((
-  { worker, isLoading },
+  { worker },
   ref,
 ) => {
   return (
