@@ -23,6 +23,7 @@ npm start
 - [Typescript](https://www.typescriptlang.org/)
 - [Sass](https://sass-lang.com/)
 - [Redux](https://redux.js.org/)
+- [Cypress](https://www.cypress.io/)
 
 ## Author
 
