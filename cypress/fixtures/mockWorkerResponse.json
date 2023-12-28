@@ -1,0 +1,20 @@
+{
+  "age": 25,
+  "country": "UK",
+  "email": "sam.jones@example.com",
+  "favorite": {
+    "color": "Red",
+    "food": "Burger",
+    "random_string": "123abc",
+    "song": "Shape of You"
+  },
+  "first_name": "Sam",
+  "gender": "Male",
+  "height": 180,
+  "id": 3,
+  "image": "worker.jpg",
+  "last_name": "Jones",
+  "profession": "Graphic Designer",
+  "description": "Passionate graphic designer with a love for creative projects.",
+  "quota": "Assigned to handle design projects for the marketing department."
+}

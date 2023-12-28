@@ -17,7 +17,7 @@ const Worker = forwardRef<HTMLDivElement, WorkerProps>((
       <div
         className="worker"
         ref={ref}
-        data-test="nav-logo"
+        data-test="worker-card"
       >
         <img
           src={worker.image}

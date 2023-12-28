@@ -17,13 +17,13 @@ export default function WorkerSummary({
 }: WorkerSummaryProps) {
   return (
     <div className="worker-summary">
-      <span className="worker-summary__name">
+      <span className="worker-summary__name" data-test="worker-summary-name">
         { first_name } { last_name }
       </span>
-      <span className="worker-summary__gender">
+      <span className="worker-summary__gender" data-test="worker-summary-gender">
         { gender === 'F' ? 'Woman' : 'Man' }
       </span>
-      <span className="worker-summary__profession">
+      <span className="worker-summary__profession" data-test="worker-summary-profession">
         { profession }
       </span>
     </div>

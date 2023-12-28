@@ -1,0 +1,114 @@
+{
+  "current": "1",
+  "total": "10",
+  "results": [
+    {
+      "age": 28,
+      "country": "USA",
+      "email": "john.doe@example.com",
+      "favorite": {
+        "color": "Blue",
+        "food": "Pizza",
+        "random_string": "abc123",
+        "song": "Imagine"
+      },
+      "first_name": "John",
+      "gender": "Male",
+      "height": 175,
+      "id": 1,
+      "image": "worker.jpg",
+      "last_name": "Doe",
+      "profession": "Software Engineer"
+    },
+    {
+      "age": 32,
+      "country": "Canada",
+      "email": "jane.smith@example.com",
+      "favorite": {
+        "color": "Green",
+        "food": "Sushi",
+        "random_string": "xyz456",
+        "song": "Bohemian Rhapsody"
+      },
+      "first_name": "Jane",
+      "gender": "Female",
+      "height": 160,
+      "id": 2,
+      "image": "worker.jpg",
+      "last_name": "Smith",
+      "profession": "Data Scientist"
+    },
+    {
+      "age": 25,
+      "country": "UK",
+      "email": "sam.jones@example.com",
+      "favorite": {
+        "color": "Red",
+        "food": "Burger",
+        "random_string": "123abc",
+        "song": "Shape of You"
+      },
+      "first_name": "Sam",
+      "gender": "Male",
+      "height": 180,
+      "id": 3,
+      "image": "worker.jpg",
+      "last_name": "Jones",
+      "profession": "Graphic Designer"
+    },
+    {
+      "age": 30,
+      "country": "Australia",
+      "email": "emily.white@example.com",
+      "favorite": {
+        "color": "Purple",
+        "food": "Pasta",
+        "random_string": "456xyz",
+        "song": "Don't Stop Believin'"
+      },
+      "first_name": "Emily",
+      "gender": "Female",
+      "height": 165,
+      "id": 4,
+      "image": "worker.jpg",
+      "last_name": "White",
+      "profession": "Marketing Manager"
+    },
+    {
+      "age": 32,
+      "country": "Canada",
+      "email": "jane.smith@example.com",
+      "favorite": {
+        "color": "Green",
+        "food": "Sushi",
+        "random_string": "xyz456",
+        "song": "Bohemian Rhapsody"
+      },
+      "first_name": "Jane",
+      "gender": "Female",
+      "height": 160,
+      "id": 2,
+      "image": "worker.jpg",
+      "last_name": "Smith",
+      "profession": "Data Scientist"
+    },
+    {
+      "age": 25,
+      "country": "UK",
+      "email": "sam.jones@example.com",
+      "favorite": {
+        "color": "Red",
+        "food": "Burger",
+        "random_string": "123abc",
+        "song": "Shape of You"
+      },
+      "first_name": "Sam",
+      "gender": "Male",
+      "height": 180,
+      "id": 3,
+      "image": "worker.jpg",
+      "last_name": "Jones",
+      "profession": "Graphic Designer"
+    }
+  ]
+}
