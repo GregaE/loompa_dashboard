@@ -1,31 +1,45 @@
-import { useEffect } from 'react';
+import { useMemo, useRef, useCallback } from 'react';
 import { useAppDispatch, useAppSelector } from "hooks/reduxHooks";
 import {
-  fetchWorkers,
   setSearchTerm,
-  setFilteredWorkers,
+  incrementWorkersPage,
 } from "store/workersSlice";
+import { useGetWorkersQuery } from 'store/workerApiSlice';
 import SearchBar from 'components/search-bar/SearchBar';
 import WorkerList from 'components/worker-list/WorkerList';
-import useWorkersInfiniteScroll from 'hooks/useWorkersInfiniteScroll';
+import filterWorkers from 'utils/filterWorkers';
 import './Home.scss';
 
 export default function Home() {
-  const { lastPostRef } = useWorkersInfiniteScroll();
-
   const dispatch = useAppDispatch();
-  const isLoadingWorkers = useAppSelector((state) => state.workers.isLoadingWorkers);
-  const filteredWorkers = useAppSelector((state) => state.workers.filteredWorkers);
+  const workersPage = useAppSelector((state) => state.workers.workersPage);
   const searchTerm = useAppSelector((state) => state.workers.searchTerm);
+
+  const { data, isLoading } = useGetWorkersQuery(workersPage);
 
   function handleSearch(search: string) {
     dispatch(setSearchTerm(search));
-    dispatch(setFilteredWorkers());
   }
 
-  useEffect(() => {
-    dispatch(fetchWorkers(true));
-  }, []);
+  const filteredWorkers = useMemo(() => {
+    if (data && data.results.length) {
+      return filterWorkers(data.results, searchTerm)
+    }
+    return [];
+  }, [data, searchTerm]);
+
+  const observer = useRef<IntersectionObserver | null>(null);
+
+  const lastPostRef = useCallback(
+    (node: HTMLDivElement) => {
+      if (observer.current) observer.current.disconnect();
+      observer.current = new IntersectionObserver((entries, options) => {
+        if (entries[0].isIntersecting) {
+          dispatch(incrementWorkersPage())
+        }
+      }, { rootMargin: "100px" });
+      if (node) observer.current.observe(node);
+    },[dispatch]);
 
   return (
     <main className="home-page">
@@ -39,9 +53,10 @@ export default function Home() {
       <h2 data-test="home-subheader">There are more than 100k</h2>
       <WorkerList
         workers={filteredWorkers}
-        isLoading={isLoadingWorkers}
+        isLoading={isLoading}
         ref={lastPostRef}
       />
     </main>
   );
 }
+

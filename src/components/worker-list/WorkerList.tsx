@@ -11,7 +11,7 @@ interface WorkerListProps {
 
 const WorkerList = forwardRef<HTMLDivElement, WorkerListProps>((props, ref) => {
   return (
-    <div className='worker-list'>
+    <div className='worker-list' data-test="worker-list">
       {
         props.workers.map((worker: WorkerModel, index) => {
           if (props.workers.length === index + 1) {

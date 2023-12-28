@@ -1,22 +1,15 @@
-import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { fetchWorker } from 'store/workersSlice';
-import { useAppDispatch, useAppSelector } from 'hooks/reduxHooks';
+import { useGetWorkerQuery } from 'store/workerApiSlice';
 import DetailedWorker from 'components/worker/DetailedWorker';
 
 export default function WorkerDetails() {
   const { id } = useParams();
-  const dispatch = useAppDispatch();
-  const worker = useAppSelector((state) => state.workers.currentWorker);
-  const isLoading = useAppSelector((state) => state.workers.isLoadingCurrentWorker);
 
-  useEffect(() => {
-    if (id) dispatch(fetchWorker(id));
-  }, [id]);
+  const { data, isLoading } = useGetWorkerQuery(id as string)
 
   return (
     <main>
-      { <DetailedWorker worker={worker} isLoading={isLoading}/> }
+      <DetailedWorker worker={data} isLoading={isLoading}/>
     </main>
   );
 }
