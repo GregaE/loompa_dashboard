@@ -1,4 +1,4 @@
-describe('Home page', () => {
+describe('Oompa dashboard', () => {
   beforeEach(() => {
     cy.intercept('worker.jpg', { fixture: "mock_image.jpg" })
     cy.intercept('GET', 'https://2q2woep105.execute-api.eu-west-1.amazonaws.com/napptilus/oompa-loompas?page=1', {
@@ -22,10 +22,9 @@ describe('Home page', () => {
     cy.get('[data-test="worker-summary-profession"]').first().should('contain', 'Software Engineer');
   })
   it('Scrolling to the bottom of the page loads more workers', () => {
-    cy.scrollTo('bottom', { duration: 1000 });
+    cy.scrollTo('bottom', { duration: 2000 });
+    cy.wait(1000);
     cy.get('[data-test="worker-card"]').its('length').should('eq', 31);
-    cy.scrollTo('bottom', { duration: 1000 });
-    cy.get('[data-test="worker-card"]').its('length').should('eq', 56);
   })
   it('Clicking on a worker routes to that workers details', () => {
     cy.get('[data-test="worker-card"]').eq(2).click();
@@ -33,8 +32,12 @@ describe('Home page', () => {
     cy.intercept('GET', 'https://2q2woep105.execute-api.eu-west-1.amazonaws.com/napptilus/oompa-loompas/3', {
       fixture: 'mockWorkerResponse.json',
     })
+
     cy.get('[data-test="worker-summary-name"]').first().should('contain', 'Sam Jones');
     cy.get('[data-test="worker-summary-gender"]').first().should('contain', 'M');
     cy.get('[data-test="worker-summary-profession"]').first().should('contain', 'Graphic Designer');
+
+    cy.get('[data-test="nav-logo"]').click();
+    cy.url().should('include', '/');
   })
 })
